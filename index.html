@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Student card maker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><h1>Student card maker</h1><p>Standard ID size (85.6 × 54 mm). Pick a design, colour and options, fill in the details, then download print-ready PNGs.</p></header>
+<main class="app">
+<section class="stage">
+<div id="cards" class="cards"></div>
+<div id="msg" role="status"></div>
+<p class="hint">Exports at 300 dpi for CR80 / PVC card printers.</p>
+</section>
+<section>
+<div class="panel"><h2>Design</h2>
+<div id="designs" class="designs"></div>
+<div style="height:14px"></div>
+<h2>Colour</h2><div id="sw" class="sw"></div>
+<div style="height:14px"></div>
+<h2>Layout</h2>
+<div class="seg" id="ori"><button data-o="h" aria-pressed="true">Horizontal</button><button data-o="v" aria-pressed="false">Vertical</button></div>
+</div>
+<div class="panel"><h2>Options</h2><div id="opts" class="form"></div></div>
+<div class="panel"><h2>Text style</h2>
+<div class="style-controls">
+<label>Name colour<input type="color" value="#0f172a" data-color="nameColor" aria-label="Name text colour"></label>
+<div class="seg" data-opt="nameSize" aria-label="Name text size"><button data-v="s" aria-pressed="false">Small</button><button data-v="m" aria-pressed="true">Medium</button><button data-v="l" aria-pressed="false">Large</button></div>
+<label class="ck"><input type="checkbox" data-t="nameBold" checked> Bold name</label>
+<label class="ck"><input type="checkbox" data-t="nameItalic"> Italic name</label>
+</div>
+</div>
+<div class="panel"><h2>Photo and logo</h2>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<label class="file"><input type="file" id="photo" accept="image/*"><span>Upload photo</span></label>
+<label class="file"><input type="file" id="logo" accept="image/*"><span>Upload logo</span></label>
+<button class="btn ghost" id="clr">Remove both</button>
+</div></div>
+<div class="panel"><h2>Details</h2><div id="form" class="form"></div></div>
+</section>
+</main>
+<footer class="credit">
+<span class="credit-mark" aria-hidden="true">SC</span>
+<p><span>Created by</span> <strong>Shahsawar</strong><span class="credit-role">Programmer · Student Card Maker</span></p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
